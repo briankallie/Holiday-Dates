@@ -1,0 +1,348 @@
+/* ========== Reset ========== */
+* {
+	border: none;
+	outline: none;
+}
+
+ul,
+ol {
+	list-style: none;
+    padding-left: 0;
+}
+
+/* ========== Clearfix ========== */
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+/* ========== Root and Body ========== */
+html {
+	font-size: 62.5%;
+	line-height: 1.6;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+}
+
+body {
+	font-size: 1.6em;
+	background-color: #ffffff;
+	color: #000000;
+}
+
+/* ========== Media - All ========== */
+.fancybox-container {
+    display: none;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 960px;
+	width: 100%;
+    background-color: #ffffff;
+}
+
+.column { 
+    padding: 0 0.25rem;
+}
+
+img {
+	max-width: 200px;
+}
+
+ul.holiday-list {
+    list-style-type: square;
+    padding-left: 30px;
+}
+
+header {
+    background-color: #ffffff;
+}
+
+header h1 {
+    display: block;
+    font-family: 'Kaushan Script', cursive;
+}
+
+header.column {
+    padding: 0;
+}
+
+#holiday-symbols{
+    font-size: 2em;
+}
+
+h2, h3 {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 0.1em;
+    border: none;
+}
+
+h2#holidayname {
+    text-align: center;
+}
+
+h3.importantheader {
+    background-color: #ffffff;
+}
+
+/* ========== Color Palette ========== */
+#holiday-color-palette {
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.holiday-color-sample {
+    float: left;
+    height: 40px;
+    width: 40px;
+}
+
+.blackbg { background-color: black; }
+.brownbg { background-color: brown; }
+.goldbg { background-color: gold; }
+.greenbg { background-color: green; }
+.lightbluebg { background-color: lightblue; }
+.lightgreenbg { background-color: lightgreen; }
+.lightpinkbg { background-color: lightpink; }
+.lightyellowbg { background-color: lightyellow; }
+.orangebg { background-color: orange; }
+.pinkbg { background-color: pink; }
+.redbg { background-color: red; }
+.whitebg { background-color: white; }
+.yellowbg { background-color: yellow; }
+
+/* ========== Main Link States ========== */
+a:link, a:visited {
+    text-decoration: underline;
+    color: #000000;
+    font-weight: bold;
+}
+
+a:after { 
+     content: " ( " attr(href) " ) ";
+}
+
+/* ========== Navigation (Slicknav) ========== */
+nav {
+    display: none;
+}
+
+div.slicknav_menu {
+    display: none;
+}
+
+/* ========== Form controls ========== */
+form#holiday-contact {
+    margin: 1em 0;
+}
+
+form#holiday-contact fieldset {
+    border: 1px solid black;
+    background-color: #ffffff;
+}
+
+form#holiday-contact legend {
+    padding: 0.35em;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+form input[type="text"], input[type="email"], input[type="search"], select, textarea {
+	display: block;
+	width: 100%;
+	margin-bottom: 1em;
+	padding: 0.35em;
+}
+
+form label[for="radio-yes"], label[for="radio-no"] {
+    margin-right: 3em;
+}
+
+form label[for="txtareamessage"] {
+    margin-top: 0.5em;
+    display: block;
+}
+
+form input[type="submit"] {
+    margin-top: 1em;
+    padding: 0.5em;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    float: right;
+}
+
+    form#error_search fieldset {
+        background-color: #ffffff;
+        margin-bottom: 1em;
+    }
+    
+    form#error_search input[type="submit"] {
+        float: none;
+    }
+
+    form#error_search label.hidden {
+        display: none;
+    }
+
+/* ========== Footer ========== */
+footer {
+    margin: 0;
+    clear: both;
+    height: 50px;
+    line-height: normal;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+}
+
+footer a:link, footer a:visited {
+    text-decoration: underline;
+    color: #000000;
+    font-weight: bold;
+}
+
+footer :not(:first-child) {
+    display: none;
+}
+
+/* ==========================================================================
+   Media: Tablet and Desktop
+   ========================================================================== */
+
+@media (min-width: 768px) {
+
+/* ========== Grid: Columns ========== */
+    .column {
+        float: left;
+        margin: 0;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+    
+    .column.full { width: 100%; }
+    .column.three-fourths {width: 75%; }
+    .column.two-thirds { width: 66.66%; }
+    .column.half { width: 50%; }
+    .column.third { width: 33.33%; }
+    .column.fourth { width: 25%; }
+    .column.flow-opposite { float: right; }
+	
+/* ========== Grid: Nested Columns ========== */
+	.column .column.half:first-child {
+		padding-left: 0;
+	}
+	
+	.column .column.half:last-child {
+		padding-right: 0;
+	}
+    
+/* ========== Header ========== */
+    header {
+        font-family: 'Kaushan Script', cursive;
+    }
+    
+/* ========== Navigation ========== */
+	nav {
+        display: none;
+    }
+
+    div.slicknav_menu {
+        display: none;
+    }
+    
+    footer {
+        line-height: 50px;
+    }
+	
+/* ========== Form controls ========== */
+    form input[type=text], input[type="email"], input[type="search"], textarea, select {
+        width: 50%;
+        display: inline-block;
+    }
+    
+    form label {
+        display: inline-block;
+        min-width: 10em;
+        text-align: right;
+    }
+    
+    form label#lblmessage {
+        display: inline-block;
+        vertical-align: top;
+        min-width: 10em;
+    }
+    
+    div#rdo-group {
+        display: inline-block;
+        padding-left: 0.5em;
+    }
+    
+    form label[for="radio-yes"], label[for="radio-no"] {
+        margin: 0 2em 1em 0;
+        min-width: 0;
+        display: inline-block;
+    }
+    
+    form input[type="submit"] {
+        float: left;
+    }
+    
+/* ========== Alignment Text and Images ========== */
+	
+	.center {
+		text-align: center;
+	}
+    
+    img {
+        width: auto;
+    }
+	
+	.img-left {
+		float: left;
+		width: 200px;
+		margin: 0 1em 0 0;
+	}
+	
+	.img-right {
+		float: right;
+		width: 200px;
+		margin: 0 0 0 1em;
+	}
+    
+    .img-center {
+		display: block;
+        text-align: center;
+        margin: 0 auto;
+		width: 200px;
+	}
+    
+    header h1 {
+        display: block;
+        text-align: center;
+    }
+	
+} /* /@media 768px */
+
+
+/* ==========================================================================
+   Debug: Desktop Only
+   ========================================================================== */
+
+@media (min-width: 1025px) {
+
+}

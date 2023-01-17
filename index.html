@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <title>Home - Holiday Dates</title>
+    <meta name="description" content="Your ultimate holiday dates and information headquarters!">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Stylesheets and Fonts -->
+    <link rel="stylesheet" href="/css/normalize.css" media="screen">
+    <link rel="stylesheet" href="/css/screen.css" media="screen">
+    <link rel="stylesheet" href="/css/print.css" media="print">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+    
+    <!-- Load jQuery Library (Only load once per page) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <!-- Load SlickNav CSS / SlickNav Plugin / Select Navigation / Run SlickNav -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js"></script>
+    
+    <!-- Configure and implement Slicknav Navigation bar -->
+    <script>
+        $(document).ready(function(){
+            $('nav').slicknav({
+                label: "",
+                prependTo: 'header',
+                brand: 'Holiday Dates'
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+		<header class="column full">
+			<h1>Holiday Dates</h1>
+		</header>
+
+		<div class="row clearfix">
+			<nav class="column full">
+				<ul>
+					<li><a href="/index.html">Home</a></li>
+					<li><a href="/holidays/index.html">Holidays</a></li>
+					<li><a href="/contact/index.html">Contact</a></li>
+					<li><a href="/about/index.html">About Us</a></li>
+				</ul>
+			</nav>
+		</div><!--  /row -->
+        <div class="row clearfix">
+            <div class="column full">
+                <h2>Holidays for all!</h2>
+                <p>Have ordinary days got you down?  Ever find yourself looking forward to the next holiday, but not knowing exactly what day it lands on in the calendar year?  Or maybe your busy life has caused you to get behind in your Christmas/Valentines/Halloween/etc. shopping?  Well, look no further than Holiday Dates!  Our site will give you the correct dates for each holiday as well as helpful information about past celebrations, history, and traditions held even in the modern world.  Stay a while and browse our holiday list.  Who knows?  You might find a new holiday to celebrate in the coming years.</p>
+            </div><!-- /full -->
+        </div><!--  /row -->
+        <div class="row clearfix">
+            <div class="column half">
+                <h2>Our history</h2>
+                <p>Ever wonder where the idea of Holiday Dates originated?  Ever wanted to see the early sketches of the site's design?  See our <a href="about/index.html">About Us</a> page and explore the history and concept of the site as well as what the site almost became.</p>
+            </div><!-- /half -->
+            <div class="column half">
+                <h2>Contributions/Corrections</h2>
+                <p>Not finding the holiday you are looking for?  Or perhaps the information on an existing entry is lacking/incorrect?  Feel free to <a href="contact/index.html">contribute</a> and add to our listings.  We are always looking to expand our collection of holidays and other celebrations.  Whether they be religious, regional, secular, or even local; Holiday Dates has you covered!</p>
+            </div><!-- /half -->
+        </div><!--  /row -->
+		<footer class="row clearfix">
+			<p class="column full center">
+				— <a href="/index.html">© <span class="currentyear"></span> Brian Kallie</a> —
+			</p>
+		</footer><!--  /row -->
+	</div><!-- /container -->
+    <!-- Get current full year -->
+    <script>
+        var date = new Date();
+        var year = date.getFullYear();
+        var elYear = document.getElementsByClassName("currentyear");
+        
+        var i;
+		for (i = 0; i < elYear.length; i++) {
+  			elYear[i].textContent = year;
+		}
+    </script>
+</body>
+</html>

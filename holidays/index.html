@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <title>Holiday List - Holiday Dates</title>
+    <meta name="description" content="Your ultimate holiday dates and information headquarters!">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Stylesheets and Fonts -->
+    <link rel="stylesheet" href="/css/normalize.css" media="screen">
+    <link rel="stylesheet" href="/css/screen.css" media="screen">
+    <link rel="stylesheet" href="/css/print.css" media="print">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+    
+    <!-- Load jQuery Library (Only load once per page) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <!-- Load SlickNav CSS / SlickNav Plugin / Select Navigation / Run SlickNav -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js"></script>
+    
+    <!-- Configure and implement Slicknav Navigation bar -->
+    <script>
+        $(document).ready(function(){
+            $('nav').slicknav({
+                label: "",
+                prependTo: 'header',
+                brand: 'Holiday Dates'
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+		<header class="column full">
+			<h1>Holiday Dates</h1>
+		</header>
+
+		<div class="row clearfix">
+			<nav class="column full">
+				<ul>
+					<li><a href="/index.html">Home</a></li>
+					<li><a href="/holidays/index.html">Holidays</a></li>
+					<li><a href="/contact/index.html">Contact</a></li>
+					<li><a href="/about/index.html">About Us</a></li>
+				</ul>
+			</nav>
+		</div><!--  /row -->
+        <div class="row clearfix">
+            <div class="column full">
+                <h2>Holiday List</h2>
+                <p>From January to December, we have you covered with up to date and accurate holiday information and celebration traditions.  Don't see a holiday that you're looking for?  <a href="../contact/index.html">Submit it</a>!</p>
+                <ul class="holiday-list">
+					<li><a href="/holidays/christmas/index.html">Christmas</a></li>
+					<li><a href="/holidays/easter/index.html">Easter</a></li>
+					<li><a href="/holidays/halloween/index.html">Halloween</a></li>
+					<li><a href="/holidays/thanksgiving/index.html">Thanksgiving</a></li>
+					<li><a href="/holidays/valentines/index.html">Valentine's Day</a></li>
+				</ul>
+                
+                <p>More coming soon...</p>
+            </div>
+            <!-- /full -->
+        </div>
+        <!--  /row -->
+		<footer class="row clearfix">
+			<p class="column full center">
+				— <a href="/index.html">© <span class="currentyear"></span> Brian Kallie</a> —
+			</p>
+		</footer><!--  /row -->
+	</div><!-- /container -->
+    <!-- Get current full year -->
+    <script>
+        var date = new Date();
+        var year = date.getFullYear();
+        var elYear = document.getElementsByClassName("currentyear");
+        
+        var i;
+		for (i = 0; i < elYear.length; i++) {
+  			elYear[i].textContent = year;
+		}
+    </script>
+</body>
+</html>

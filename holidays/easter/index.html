@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <title>Easter - Holiday Dates</title>
+    <meta name="description" content="Your ultimate holiday dates and information headquarters!">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Stylesheets and Fonts -->
+    <link rel="stylesheet" href="/css/normalize.css" media="screen">
+    <link rel="stylesheet" href="/css/screen.css" media="screen">
+    <link rel="stylesheet" href="/css/print.css" media="print">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+    
+    <!-- Load jQuery Library (Only load once per page) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <!-- Load SlickNav CSS / SlickNav Plugin / Select Navigation / Run SlickNav -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js"></script>
+    
+    <!-- Load Moment.JS / Moment-Holiday.JS Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment-holiday@1.5.1/build/moment-holiday-us.min.js"></script>
+    
+    <!-- Configure and implement Slicknav Navigation bar -->
+    <script>
+        $(document).ready(function(){
+            $('nav').slicknav({
+                label: "",
+                prependTo: 'header',
+                brand: 'Holiday Dates'
+            });
+        });
+    </script>
+    <!-- Load the fancybox CSS code -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+    <!-- Load the fancybox jQuery plugin code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+		<header class="column full">
+			<h1>Holiday Dates</h1>
+		</header>
+
+		<div class="row clearfix">
+			<nav class="column full">
+				<ul>
+					<li><a href="/index.html">Home</a></li>
+					<li><a href="/holidays/index.html">Holidays</a></li>
+					<li><a href="/contact/index.html">Contact</a></li>
+					<li><a href="/about/index.html">About Us</a></li>
+				</ul>
+			</nav>
+		</div><!--  /row -->
+
+		<div class="row clearfix">
+        <div class="column three-fourths">
+            <h2 id="holidayname">.</h2>
+            <!-- two columns in a three-fourths -->
+            <div class="row clearfix">
+                <div class="column half">
+                    <h3 class="importantheader">Calendar date for <span class="currentyear"></span></h3>
+                    <p id="holidaydate"></p>
+                </div>
+                <!-- /half -->
+                <div class="column half">
+                    <h3>Symbols and Associated Colors</h3>
+                    <div id="holiday-color-palette">
+                        <div class="holiday-color-sample lightbluebg"></div>
+                        <div class="holiday-color-sample lightpinkbg"></div>
+                        <div class="holiday-color-sample lightgreenbg"></div>
+                        <div class="holiday-color-sample lightyellowbg"></div>
+                    </div>
+                    <div id="holiday-symbols">🐰🐤🥚</div>
+                </div>
+                <!-- /half -->
+            </div>
+            <!--  /row -->
+            <h3>Origin and History</h3>
+            <a data-fancybox="" data-caption="A Christian cross" href="/images/easter_origin.jpg">
+                    <img class="img-left" src="/images/easter_origin.jpg" alt="Easter beginnings" title="Source: Unsplash.com">
+            </a>
+            <p>Easter is a yearly commemoration of the resurrection of Jesus.  As with Christmas celebrations, some Easter celebrations originated before Christianity.  Eostre, said to be the name of the Anglo-Saxon goddess of spring, is where Easter derives its name.  During the second century, Christians missionaries looking to convert pagans noticed that Easter was celebrated roughly the same time as pagan springtime celebrations and festivals.  These springtime festivals mostly celebrated life's triumph over death.  Eggs are often seen as symbols of new life and fertility.  Rabbits are also seen as symbols of fertility, so eggs, rabbits and hares have gradually been included in the holiday symbolism.</p>
+            <h3>Modern Celebrations</h3>
+            <a data-fancybox="" data-caption="Plastic Easter eggs" href="/images/easter_modern.jpg">
+                    <img class="img-right" src="/images/easter_modern.jpg" alt="Easter eggs" title="Source: Unsplash.com">
+            </a>
+            <p>Today, Easter is celebrated by Christians around the world.  Some traditions celebrated include egg hunts, egg decoration, large meals and wearing new clothing.  Unlike most other holidays, Easter is largely unaffected by mass commercialization and retains its religious origins and meaning.</p>
+        </div>
+        <!-- /three-fourths -->
+		    <div class="column fourth ">
+				<h2>Holiday List:</h2>
+				<ul class="holiday-list">
+					<li><a href="/holidays/christmas/index.html">Christmas</a></li>
+					<li><a href="/holidays/easter/index.html">Easter</a></li>
+					<li><a href="/holidays/halloween/index.html">Halloween</a></li>
+					<li><a href="/holidays/thanksgiving/index.html">Thanksgiving</a></li>
+					<li><a href="/holidays/valentines/index.html">Valentine's Day</a></li>
+				</ul>
+			</div><!-- /fourth -->
+		
+		</div><!--  /row -->
+
+        <footer class="row clearfix">
+			<p class="column full center">
+				— <a href="/index.html">© <span class="currentyear"></span> Brian Kallie</a> —
+			</p>
+		</footer><!--  /row -->
+	</div><!-- /container -->
+    <!-- Get current full year -->
+    <script>
+        var date = new Date();
+        var year = date.getFullYear();
+        var elYear = document.getElementsByClassName("currentyear");
+        
+        var i;
+		for (i = 0; i < elYear.length; i++) {
+  			elYear[i].textContent = year;
+		}
+    </script>
+    
+    <!-- Use Moment.JS libraries to search for holiday by keyword and return formatted month, day, and day of the week -->
+    <script>
+        var holName = "Easter";
+        var holDate = moment().holiday(holName).format('dddd, MMMM Do');
+        
+        var elHolDate = document.getElementById("holidaydate");
+        elHolDate.textContent = holDate;
+        var elHolName = document.getElementById("holidayname");
+        elHolName.textContent = holName;
+    </script>
+</body>
+</html>

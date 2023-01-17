@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+<title>403 Error - Forbidden - Holiday Dates</title>
+<meta name="description" content="Your ultimate holiday date and information headquarters!">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Stylesheets and Fonts -->
+    <link rel="stylesheet" href="/css/normalize.css" media="screen">
+    <link rel="stylesheet" href="/css/screen.css" media="screen">
+    <link rel="stylesheet" href="/css/print.css" media="print">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+    
+    <!-- Load jQuery Library (Only load once per page) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <!-- Load SlickNav CSS / SlickNav Plugin / Select Navigation / Run SlickNav -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js"></script>
+    
+    <!-- Configure and implement Slicknav Navigation bar -->
+    <script>
+        $(document).ready(function(){
+            $('nav').slicknav({
+                label: "",
+                prependTo: 'header',
+                brand: 'Holiday Dates'
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+		<header class="column full">
+			<h1>Holiday Dates</h1>
+		</header>
+
+		<div class="row clearfix">
+			<nav class="column full">
+				<ul>
+					<li><a href="/index.html">Home</a></li>
+					<li><a href="/holidays/index.html">Holidays</a></li>
+					<li><a href="/contact/index.html">Contact</a></li>
+					<li><a href="/about/index.html">About Us</a></li>
+				</ul>
+			</nav>
+		</div><!--  /row -->
+        <div class="row clearfix">
+            <div class="column full">
+                <h2>403 Error - Forbidden</h2>
+                <p>Uh oh!  Looks like you don't have permission to view that.  Lets get you back on track and restart on the <a href="../index.html">home page</a>.  Or you can search for your next desination:</p>
+                <form id="error_search" action="https://google.com/search">
+                    <fieldset>
+                        <ol>
+                            <li>
+                                <label for="txtsearch" class="hidden"></label>
+                                <input type="search" id="txtsearch" name="q" placeholder="Search..." autofocus>
+                                <input type="hidden" name="as_sitesearch" value="holidaydates.briankallie.com">
+                                <input type="submit" name="submit" value="Search">
+                            </li>
+                        </ol>
+                    </fieldset>
+                </form>
+            </div><!-- /full -->
+        </div>
+        <!--  /row -->
+        <footer class="row clearfix">
+			<p class="column full center">
+				— <a href="/index.html">© <span class="currentyear"></span> Brian Kallie</a> —
+			</p>
+		</footer><!--  /row -->
+	</div><!-- /container -->
+    <!-- Get current full year -->
+    <script>
+        var date = new Date();
+        var year = date.getFullYear();
+        var elYear = document.getElementsByClassName("currentyear");
+        
+        var i;
+		for (i = 0; i < elYear.length; i++) {
+  			elYear[i].textContent = year;
+		}
+    </script>
+</body>
+</html>

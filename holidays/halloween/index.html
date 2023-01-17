@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <title>Halloween - Holiday Dates</title>
+    <meta name="description" content="Your ultimate holiday dates and information headquarters!">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Stylesheets and Fonts -->
+    <link rel="stylesheet" href="/css/normalize.css" media="screen">
+    <link rel="stylesheet" href="/css/screen.css" media="screen">
+    <link rel="stylesheet" href="/css/print.css" media="print">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+    
+    <!-- Load jQuery Library (Only load once per page) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <!-- Load SlickNav CSS / SlickNav Plugin / Select Navigation / Run SlickNav -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js"></script>
+    
+    <!-- Load Moment.JS / Moment-Holiday.JS Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment-holiday@1.5.1/build/moment-holiday-us.min.js"></script>
+    
+    <!-- Configure and implement Slicknav Navigation bar -->
+    <script>
+        $(document).ready(function(){
+            $('nav').slicknav({
+                label: "",
+                prependTo: 'header',
+                brand: 'Holiday Dates'
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+    <!-- Load the fancybox jQuery plugin code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+		<header class="column full">
+			<h1>Holiday Dates</h1>
+		</header>
+
+		<div class="row clearfix">
+			<nav class="column full">
+				<ul>
+					<li><a href="/index.html">Home</a></li>
+					<li><a href="/holidays/index.html">Holidays</a></li>
+					<li><a href="/contact/index.html">Contact</a></li>
+					<li><a href="/about/index.html">About Us</a></li>
+				</ul>
+			</nav>
+		</div><!--  /row -->
+
+		<div class="row clearfix">
+        <div class="column three-fourths">
+            <h2 id="holidayname">.</h2>
+            <!-- two columns in a three-fourths -->
+            <div class="row clearfix">
+                <div class="column half">
+                    <h3 class="importantheader">Calendar date for <span class="currentyear"></span></h3>
+                    <p id="holidaydate"></p>
+                </div>
+                <!-- /half -->
+                <div class="column half">
+                    <h3>Symbols and Associated Colors</h3>
+                    <div id="holiday-color-palette">
+                        <div class="holiday-color-sample orangebg"></div>
+                        <div class="holiday-color-sample blackbg"></div>
+                        <div class="holiday-color-sample yellowbg"></div>
+                    </div>
+                    <div id="holiday-symbols">🎃🧛👻💀🍬</div>
+                </div>
+                <!-- /half -->
+            </div>
+            <!--  /row -->
+            <h3>Origin and History</h3>
+            <a data-fancybox="" data-caption="Skulls and candles" href="/images/halloween_origin.jpg">
+                    <img class="img-left" src="/images/halloween_origin.jpg" alt="Halloween beginnings" title="Source: Unsplash.com">
+            </a>
+            <p>Halloween began as All Hallow's Eve which eventually morphed into the word Hallowe'en (or Halloween).  It is the day before All Saints Day, a Christian feast celebrating all martyrs and saints.  A similar celebration, called All Soul's Day, which lands on November 2nd, is said to be where most of Halloween's traditions originate.  Children and the poor, hoping to comfort dead souls, traveled to wealthy homes and asked for alms and "Soul cakes".  Jack-o-Lanterns and trick or treating in costumes are American originated and have since spread around the world.</p>
+            <h3>Modern Celebrations</h3>
+            <a data-fancybox="" data-caption="Jack-o-Lanterns" href="/images/halloween_modern.jpg">
+                    <img class="img-right" src="/images/halloween_modern.jpg" alt="Jack-o-Lanterns" title="Source: Unsplash.com">
+            </a>
+            <p>Today, Halloween is a beloved holiday for children to dress up in scary/spooky/silly costumes and go door to door asking for candy and treats.  Other modern traditions include attending dark themed parties, carving pumpkins into Jack-o-Lanterns, watching monster movies, and unfortunately, vandalism via egging and destroying halloween props.  Secular celebration has largely overshadowed the religious celebrations and most people either don't know or don't care about its origins.</p>
+        </div>
+        <!-- /three-fourths -->
+		    <div class="column fourth ">
+				<h2>Holiday List:</h2>
+				<ul class="holiday-list">
+					<li><a href="/holidays/christmas/index.html">Christmas</a></li>
+					<li><a href="/holidays/easter/index.html">Easter</a></li>
+					<li><a href="/holidays/halloween/index.html">Halloween</a></li>
+					<li><a href="/holidays/thanksgiving/index.html">Thanksgiving</a></li>
+					<li><a href="/holidays/valentines/index.html">Valentine's Day</a></li>
+				</ul>
+			</div><!-- /fourth -->
+		</div><!--  /row -->
+
+        <footer class="row clearfix">
+			<p class="column full center">
+				— <a href="/index.html">© <span class="currentyear"></span> Brian Kallie</a> —
+			</p>
+		</footer><!--  /row -->
+	</div><!-- /container -->
+    <!-- Get current full year -->
+    <script>
+        var date = new Date();
+        var year = date.getFullYear();
+        var elYear = document.getElementsByClassName("currentyear");
+        
+        var i;
+		for (i = 0; i < elYear.length; i++) {
+  			elYear[i].textContent = year;
+		}
+    </script>
+    
+    <!-- Use Moment.JS libraries to search for holiday by keyword and return formatted month, day, and day of the week -->
+    <script>
+        var holName = "Halloween";
+        var holDate = moment().holiday(holName).format('dddd, MMMM Do');
+        
+        var elHolDate = document.getElementById("holidaydate");
+        elHolDate.textContent = holDate;
+        var elHolName = document.getElementById("holidayname");
+        elHolName.textContent = holName;
+    </script>
+</body>
+</html>
